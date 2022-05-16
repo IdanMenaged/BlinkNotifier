@@ -21,9 +21,8 @@ class Recognizer:
             tuple: representing a rectangle around the found eyes. the tuple consists of (x, y, w, h) where x and y are the top left coordinates while w and h are the width and the height of the rectangle
         """
         eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye.xml")
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
-        eyes = eye_cascade.detectMultiScale(gray, 1.3, 5)
+        eyes = eye_cascade.detectMultiScale(img, 1.2, 5)
         return eyes
     
     # TO DO: seperate adding the rectangle and displaying the image
